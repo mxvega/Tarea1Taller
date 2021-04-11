@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
+.brand-header {
+    font-family: "Snell Roundhand";
+    font-weight: normal;
+    font-size: 60px;
+    text-align: center;
+}

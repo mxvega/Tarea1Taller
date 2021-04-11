@@ -1,0 +1,18 @@
+{% extends "layout/header.html" %}
+
+{% block content %}
+
+    <div>
+        <h1>Breaking Bad</h1> 
+        <h2>Temporadas</h2>
+
+        {% for numero in lista_de_temporadas %}
+            <a href="/Breaking/{{ numero }}">Temporada {{ numero }}<a></a>
+            <br>
+        {% endfor %}
+    </div>
+
+    <br>
+    <a href="{% url 'index' %}">Volver al menú principal</a>.
+
+{% endblock content %}

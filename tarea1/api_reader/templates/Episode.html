@@ -1,0 +1,32 @@
+{% extends "layout/header.html" %}
+
+{% block content %}
+
+<div>
+    <a href="{% url 'index' %}">Volver al menú principal</a>.
+    <h1>Información  Episodio</h1>
+
+
+
+    {% for key in episodio_info %}
+        {% for keyyy, valueee in key.items %}
+
+            {% if keyyy == "characters" %}
+                <p>characters:</p>
+                {% for ele in valueee %}
+
+                    <p><a href="/personaje/{{ ele }}"> {{ ele }} </a></p>
+                
+                {% endfor %}
+            {% endif %}
+
+            {% if keyyy != "characters" %}
+                <p> {{ keyyy }}: {{ valueee }} </p>
+            {% endif %}
+
+        {% endfor %}
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

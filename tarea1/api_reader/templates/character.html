@@ -1,0 +1,30 @@
+{% extends "layout/header.html" %}
+
+{% block content %}
+
+<body>
+
+    <div>
+    <a href="{% url 'index' %}">Volver al menú principal</a>. 
+    <br>
+
+    {% if not sunombredepersonaje %}
+        <p> Personaje no encontrado </p>
+    {% endif %}
+
+    <p> Personaje(s): </p>
+    {% for key in sunombredepersonaje %}
+
+        {% for keyyy, valueee in key.items %}
+            {% if keyyy == "name" %}
+                 <p><a href="/personaje/{{ valueee }}"> {{ valueee }} </a> </p>
+            {% endif %}
+        {% endfor %}
+    
+    {% endfor %}
+
+    </div>
+    
+</body>
+
+{% endblock content %}

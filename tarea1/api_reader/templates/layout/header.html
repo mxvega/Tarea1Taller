@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <title>Tarea 1: Taller de Integración</title>
+        <header>
+            <h1 class="brand-header">Tarea 1: Taller de Integración</h1>
+        </header>
+
+        <form action="/character" method="POST">
+            {% csrf_token %}
+            <label>Escoja un personaje:</label>
+            <input type="text" id="fname" name="fname">
+            <input type="submit" value="Buscar personaje">
+        </form>
+    </head>
+        
+    {% block content %}
+    
+    {% endblock %}
+</html>

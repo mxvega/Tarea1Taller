@@ -1,0 +1,25 @@
+{% extends "layout/header.html" %}
+
+{% block content %}
+
+<div>
+
+    <h1>Breaking Bad</h1>
+    <h2>Episodios</h2>
+
+    {% for key, valueee in lista_episodio_id.items %}
+        <li>        
+            <a href="/Episode/{{ valueee }}"> {{ key }}<a></a>
+            <br>
+        </li>
+    {% endfor %}
+</div>
+
+<br>
+
+<a href="{% url 'BB' %}">Volver a elegir temporada</a>.
+<br>
+<br>
+<a href="{% url 'index' %}">Volver al menú principal</a>.
+
+{% endblock content %}
